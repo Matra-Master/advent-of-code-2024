@@ -51,16 +51,26 @@ Cada día va a estar numerado del 01 al 25. El *día 00* va a ser el template pa
 
 Hay un `deno.json` y un `deno.lock` igual que con npm. Ahí se instalan los paquetes necesarios. Todos los paquetes necesario están en [JSR](https://jsr.io/)
 
+Instalar paquetes
 ```bash
 #Deno install (igual que con npm)
 deno i
 ```
+
+El propio Deno tiene un modo _watch_ que corre el código de nuevo luego de cambiarlo. Perfecto para desarrollo.
+
+```bash
+deno run --watch a.ts
+```
+
+*Datazo*: Deno pide permisos para acceder a la carpeta del proyecto. Esto se puede evitar con `deno run --allow-read .`
 
 #### Lua
 
 Creo que nada
 
 ```bash
+lua 00/a.lua
 ```
 
 ### Testing
