@@ -1,10 +1,12 @@
 import { ensureFile } from "@std/fs";
 
+const day = "00";
 //
 //PUT YOUR INPUTS ON A VARIABLE
-await ensureFile("input.txt");
-const input = Deno.readTextFileSync("example.txt");
-//const input = Deno.readTextFileSync("input-a.txt");
+await ensureFile("../../inputs/" + day + "/example.txt");
+const input = Deno.readTextFileSync("../../inputs/" + day + "/example.txt");
+//const input = Deno.readTextFileSync("../../inputs/" + day + "/a.txt");
+//const input = Deno.readTextFileSync("../../inputs/" + day + "/b.txt");
 //console.log(input);
 
 //
