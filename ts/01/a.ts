@@ -10,25 +10,25 @@ const input = Deno.readTextFileSync("../../inputs/" + day + "/a.txt");
 //
 //START YOUR SOLUTION HERE
 //Separate input in two lists
-const _listA :string[] = [];
-const _listB :string[] = [];
+const _leftList :string[] = [];
+const _rightList :string[] = [];
 
 input.split('\n').forEach((line) => {
   if( line === "") return
   const split = line.split('   ');
-  _listA.push(split[0])
-  _listB.push(split[1])
+  _leftList.push(split[0])
+  _rightList.push(split[1])
 })
-_listA.sort()
-_listB.sort()
+_leftList.sort()
+_rightList.sort()
 
 console.log("List A")
-console.log(_listA)
+console.log(_leftList)
 console.log("List B")
-console.log(_listB)
+console.log(_rightList)
 
-const toSum = _listA.map((value,key) => {
-  return Math.abs(parseInt(_listB[key]) - parseInt(value))
+const toSum = _leftList.map((value,key) => {
+  return Math.abs(parseInt(_rightList[key]) - parseInt(value))
 })
 
 const output = toSum.reduce((accumulator, current) => { return accumulator + current})
