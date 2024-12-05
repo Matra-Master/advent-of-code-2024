@@ -5,6 +5,7 @@ const day = "00";
 //PUT YOUR INPUTS ON A VARIABLE
 await ensureFile("../../inputs/" + day + "/example.txt");
 const input = Deno.readTextFileSync("../../inputs/" + day + "/example.txt");
+//await ensureFile("../../inputs/" + day + "/a.txt");
 //const input = Deno.readTextFileSync("../../inputs/" + day + "/a.txt");
 console.log(input);
 //input.split().forEach(() => {})
