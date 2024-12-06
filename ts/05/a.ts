@@ -31,10 +31,18 @@ function update_is_in_right_order(pages_to_update: string, rules_array: Map<stri
   //Fijarse que la página actual no esté ya en el arreglo de prohibidas
   for (let i = 0; i < reversed_pages.length; i++) {
     const page = reversed_pages[i];
-    if (invalid_pages.includes(page)) return 0
-    invalid_pages.concat(rules_array.get(page) || [])
+    console.log("Page", page)
+    if (invalid_pages.includes(page)) {
+      console.log("Bad page", page)
+      return 0
+    }
+    rules_array.get(page)?.forEach(value => {
+      if(!invalid_pages.includes(value)) invalid_pages.push(value)
+    })
+    console.log("Invalid pages", invalid_pages)
   }
   const middle_page_value = reversed_pages[Math.floor(reversed_pages.length / 2)]
+  console.log("Middle page value: ", middle_page_value)
   return parseInt(middle_page_value)
 }
 
